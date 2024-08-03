@@ -1,0 +1,47 @@
+def queens():      #There may be some issues in the code
+    #queen 
+    global s,w,q,a,r,h,u,v
+    count=0
+    for i in range(8): #rows
+        for j in range(8): #columns
+            if i in r and j in h and r.index(i) == h.index(j):
+                print("R",end=" ")
+            else:   
+                count+=1
+                print('x',end=" ")#printing side by side
+        print()
+    print(count)
+    print(f"row {u}")
+    print(f"Column {v}")
+r=[]
+h=[]
+u=[]
+v=[]
+def rocks():
+    for a in range(13):
+        print("This the 8 x 8 rock game and u have only 12 chances\n\n")
+        s=int(input("In which row u want to place rock ? : "))
+        w= int(input("\nIn which column u want to place the rock ? :"))
+        q=s-1
+        a=w-1
+        u.append(s)
+        v.append(w)
+        if s>8 or w>8:
+            print("U cannot play")
+            continue
+        if s in u:
+            f=u.index(s)
+            u.pop(f)
+            v.pop(f)
+            print(f"\ncannot place in {s}th row and {w}th column\n\n")
+        if w in v:
+            g=v.index(w)
+            v.pop(g)
+            u.pop(g)
+            print(f"\ncannot place in {s}th row and {w}th column\n\n")
+        u.append(s)
+        v.append(w)
+        r.append(q)
+        h.append(a)
+        queens()
+rocks()
