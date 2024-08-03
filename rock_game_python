@@ -10,9 +10,7 @@ def ROCK():      #There may be some issues in the code
                 count+=1
                 print('x',end=" ")#printing side by side
         print()
-    print(count)
-    print(f"row {u}")
-    print(f"Column {v}")
+    print(f" no of x left now {count}")
 r=[]
 h=[]
 u=[]
